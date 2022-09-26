@@ -3,9 +3,9 @@ const requestIp = require('request-ip');
 const app = express();
 
 app.set('port', (process.env.PORT || 5000));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/public');
+// app.engine('html', require('ejs').renderFile);
+// app.set('view engine', 'ejs');
+// app.set('views', __dirname + '/public');
 
 app.use(requestIp.mw())
 app.use(function(req, res, next) {
@@ -18,7 +18,8 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function(request, response) {
-  response.render('index.html');
+  res.setHeader("Content-Type", "text/html");
+  res.send(`<h1>Your Dad</h1>`);
 });
 
 app.listen(app.get('port'), function() {
