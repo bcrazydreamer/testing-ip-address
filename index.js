@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/', function(request, response) {
+app.get('/', function(req, res) {
   res.setHeader("Content-Type", "text/html");
   res.send(`<h1>Your Dad</h1>`);
 });
