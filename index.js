@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
 
 app.get('/', function(req, res) {
   res.setHeader("Content-Type", "text/html");
-  res.send(`<h1>Your Dad</h1>`);
+  res.send(`Internal Server Error`);
 });
 
 app.listen(app.get('port'), function() {
